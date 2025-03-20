@@ -16,13 +16,12 @@ public class Manager : MonoBehaviour
     [Header("User code")]
     public string userCode;
 
-    [Header("Display product during evaluation?")]
-    public bool displayProduct = false;
-
     [Header("Other")]
     public TextMeshProUGUI letterDropdown;
     public TextMeshProUGUI numberDropdown;
-    public GameObject semanticDifferential;
+
+    [Header("Final canvas")]
+    public GameObject finalCanvas;
 
     private bool evaluationStarted = false;
 
@@ -56,25 +55,27 @@ public class Manager : MonoBehaviour
 
     public void StartEvaluation()
     {
-        if (SceneManager.GetActiveScene().name == "Evaluation-scene" && !evaluationStarted)
+        if (SceneManager.GetActiveScene().name != "Intro-scene_2D" && !evaluationStarted)
         {
+            finalCanvas = GameObject.FindGameObjectWithTag("FinalCanvas");
+            finalCanvas.SetActive(false);
+
             gameObject.GetComponent<PositionRecorder>().enabled = true;
             gameObject.GetComponent<EyeTrackingRecorder>().enabled = true;
-
-            if (semanticDifferential == null)
-            {
-                semanticDifferential = GameObject.FindGameObjectWithTag("SemanticDifferential");
-                semanticDifferential.SetActive(false);
-            }
-
             evaluationStarted = true;
         }
         
         else if (evaluationStarted && OVRInput.GetDown(OVRInput.Button.One))
         {
-            semanticDifferential.SetActive(true);
+            //Export data
+            Debug.Log("Eye tracking data exported");
             gameObject.GetComponent<EyeTrackingRecorder>().dataExported = true;
+            Debug.Log("Position data exported");
             gameObject.GetComponent<PositionRecorder>().dataExported = true;
+
+            //Disable product and enable final canvas
+            GameObject.FindGameObjectWithTag("Product").SetActive(false);
+            finalCanvas.SetActive(true);
         }
     }
 }

@@ -80,3 +80,6 @@ Registering precompiled unity dll's ...
 Register platform support module: D:/Programas instalados/Unity versions/2022.3.46f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Programas instalados/Unity versions/2022.3.46f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Registered in 16.468190 seconds.
+- Loaded All Assemblies, in 87.690 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found

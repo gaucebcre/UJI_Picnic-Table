@@ -7,27 +7,8 @@ TagManager:
   - VoI
   - SemanticDifferential
   - Manager
-  - QDSUIToggleButton
-  - QDSUIIcon
-  - QDSUITextSecondaryColor
-  - QDSUIPrimaryButton
-  - QDSUISharedThemeColor
-  - QDSUIAccentColor
-  - QDSUISecondaryButton
-  - QDSUIDestructiveButton
-  - QDSUIBorderlessButton
-  - QDSUIToggleBorderlessButton
-  - QDSUITooltip
-  - QDSUIToggleSwitch
-  - PassThroughButton
-  - PassThrough
-  - Locomotion
-  - LocoButton
-  - LocoText
-  - QDSUITextInputField
-  - SamplesInfoPanel
-  - QDSUIToggleCheckboxRadio
-  - QDSUISection
+  - FinalCanvas
+  - Product
   layers:
   - Default
   - TransparentFX
