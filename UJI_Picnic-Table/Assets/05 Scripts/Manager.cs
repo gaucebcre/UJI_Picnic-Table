@@ -55,7 +55,10 @@ public class Manager : MonoBehaviour
 
     public void StartEvaluation()
     {
-        if (SceneManager.GetActiveScene().name != "Intro-scene_2D" && !evaluationStarted)
+        if ((SceneManager.GetActiveScene().name != "Intro-scene_2D" ||
+            SceneManager.GetActiveScene().name != "Intro-scene_3D" ||
+            SceneManager.GetActiveScene().name != "Intro-scene_Nature")
+            && !evaluationStarted)
         {
             finalCanvas = GameObject.FindGameObjectWithTag("FinalCanvas");
             finalCanvas.SetActive(false);

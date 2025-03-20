@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01 Scenes/Evaluation-scene_2D.unity
     guid: 2f4fa735627686e4d9b55ba01c828a4b
+  - enabled: 1
+    path: Assets/01 Scenes/Intro-scene_3D.unity
+    guid: f8431b0d16a18724eb16d85545f31bdf
+  - enabled: 1
+    path: Assets/01 Scenes/Evaluation-scene_3D.unity
+    guid: cedbf9ac58270404388d8163ac2bbc66
+  - enabled: 1
+    path: Assets/01 Scenes/Intro-scene_Nature.unity
+    guid: 9505d501377d9104f9d6b231146f7f52
+  - enabled: 1
+    path: Assets/01 Scenes/Evaluation-scene_Nature.unity
+    guid: f5501b8979754974e8c045347647533a
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a68e117253fb98c4f97da0244affa5e3, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 210595ccd2136074a91583d982b5c547, type: 2}
