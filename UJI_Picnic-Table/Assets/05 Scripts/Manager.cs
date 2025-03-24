@@ -32,7 +32,7 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        if (!string.IsNullOrEmpty(userCode) && Input.GetKeyDown(KeyCode.A))
+        if (!string.IsNullOrEmpty(userCode) && Input.GetKeyDown(KeyCode.Space))
         {
             ChangeScene();
         }
