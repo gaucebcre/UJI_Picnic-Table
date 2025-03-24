@@ -17,25 +17,38 @@ public class Manager : MonoBehaviour
     [Header("User code")]
     public string userCode;
 
+    [Header("Evaluation Timer")]
+    public float evaluationTime = 35f;
+
     private bool evaluationStarted = false;
+    private float evaluationTimer;
 
     void Start()
     {
         //Don't destroy
         DontDestroyOnLoad(this.gameObject);
-        DontDestroyOnLoad(player);      
+        DontDestroyOnLoad(player);
     }
 
     void Update()
-    {       
+    {
         if (!string.IsNullOrEmpty(userCode) && Input.GetKeyDown(KeyCode.A))
         {
             ChangeScene();
         }
 
-        if (SceneManager.GetActiveScene().name != "Intro-scene_2D" && SceneManager.GetActiveScene().name != "Intro-scene_3D" && SceneManager.GetActiveScene().name != "Intro-scene_Nature")
+        if (!evaluationStarted && SceneManager.GetActiveScene().name != "Intro-scene_2D" && SceneManager.GetActiveScene().name != "Intro-scene_3D" && SceneManager.GetActiveScene().name != "Intro-scene_Nature")
         {
             StartEvaluation();
+        }
+
+        if (evaluationStarted)
+        {
+            evaluationTimer -= Time.deltaTime;
+            if (evaluationTimer <= 0)
+            {
+                ExportData();
+            }
         }
     }
 
@@ -51,7 +64,7 @@ public class Manager : MonoBehaviour
     {
         if (!evaluationStarted)
         {
-            if(SceneManager.GetActiveScene().name != "Evaluation-scene_2D")
+            if (SceneManager.GetActiveScene().name != "Evaluation-scene_2D")
             {
                 gameObject.GetComponent<PositionRecorder>().enabled = true;
             }
@@ -59,14 +72,19 @@ public class Manager : MonoBehaviour
             gameObject.GetComponent<EyeTrackingRecorder>().enabled = true;
 
             evaluationStarted = true;
-        }
-        
-        else if (evaluationStarted && Input.GetKeyDown(KeyCode.S))
-        {
-            Debug.Log("Eye tracking data exported");
-            gameObject.GetComponent<EyeTrackingRecorder>().dataExported = true;
-            Debug.Log("Position data exported");
-            gameObject.GetComponent<PositionRecorder>().dataExported = true;
+            evaluationTimer = evaluationTime; // Iniciar el temporizador
         }
     }
+
+    private void ExportData()
+    {
+        Debug.Log("Eye tracking data exported");
+        gameObject.GetComponent<EyeTrackingRecorder>().dataExported = true;
+        Debug.Log("Position data exported");
+        gameObject.GetComponent<PositionRecorder>().dataExported = true;
+
+        // Detener evaluación después de exportar los datos
+        evaluationStarted = false;
+    }
 }
+
