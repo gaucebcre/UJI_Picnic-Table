@@ -3181,6 +3181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: User Code
       objectReference: {fileID: 0}
+    - target: {fileID: 936033479698441633, guid: 23ac5936861d14141a5de3792e54e054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3156224259625269608, guid: 23ac5936861d14141a5de3792e54e054, type: 3}
       propertyPath: m_IsActive
       value: 0
