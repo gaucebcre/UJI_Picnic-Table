@@ -2132,6 +2132,7 @@ MonoBehaviour:
   player: {fileID: 1852729164}
   sceneName: Evaluation-Scene_2D
   userCode: 
+  evaluationTime: 120
 --- !u!4 &1420807117
 Transform:
   m_ObjectHideFlags: 0
@@ -2820,7 +2821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7079690332722676895, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 3263
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

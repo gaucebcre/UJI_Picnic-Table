@@ -45,7 +45,7 @@ public class Manager : MonoBehaviour
         if (evaluationStarted)
         {
             evaluationTimer -= Time.deltaTime;
-            if (evaluationTimer <= 0)
+            if (evaluationTimer <= 0 || Input.GetKeyDown(KeyCode.A))
             {
                 ExportData();
             }

@@ -108,7 +108,9 @@ public class EyeTrackingRecorder : MonoBehaviour
             {
                 voi.Add("Environment");
             }
-        }    
+        }
+
+        Debug.Log("Último valor añadido: " + voi[voi.Count - 1]);
     }
 
     public void ExportData()
