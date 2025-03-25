@@ -39,8 +39,8 @@ public class RandomObjectSwitcher : MonoBehaviour
 
         Debug.Log("No hay más objetos disponibles para mostrar.");
 
-        // Apagar el objeto que lleva este script
-        gameObject.SetActive(false);
+        // Mostrar permanentemente el objeto en images[1]
+        ShowObject(1);
     }
 
     void SwitchToRandomObject()
@@ -126,3 +126,4 @@ public class RandomObjectSwitcher : MonoBehaviour
         }
     }
 }
+
