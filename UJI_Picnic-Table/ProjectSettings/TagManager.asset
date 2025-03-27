@@ -9,6 +9,7 @@ TagManager:
   - Manager
   - FinalCanvas
   - Product
+  - Image
   layers:
   - Default
   - TransparentFX

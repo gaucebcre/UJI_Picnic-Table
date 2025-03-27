@@ -8,7 +8,7 @@ public class RandomObjectSwitcher : MonoBehaviour
     public GameObject[] images;
 
     // Tiempo que cada objeto estará visible
-    public int displayTime = 2; // Tiempo en segundos
+    public float displayTime = 2f; // Tiempo en segundos
 
     private List<int> availableIndices; // Lista de índices disponibles para seleccionar
     private int previousIndex = -1;    // Índice del objeto mostrado anteriormente

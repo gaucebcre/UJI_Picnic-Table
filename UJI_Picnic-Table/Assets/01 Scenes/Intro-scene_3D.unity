@@ -2133,6 +2133,7 @@ MonoBehaviour:
   leftEyeBlink: 12
   rightEyeBlink: 13
   volumesOfInterest: []
+  activeImage: {fileID: 0}
   frequence: 120
   toHMD: 0
   dataExported: 0
@@ -3023,7 +3024,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
