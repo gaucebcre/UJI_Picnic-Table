@@ -8,6 +8,9 @@ using TMPro.Examples;
 
 public class Manager : MonoBehaviour
 {
+    public Vector3 posicionBici; // Solo para guardar
+    public float rotacionBiciY; // Solo para guardar
+
     [Header("Player")]
     public GameObject player;
 
@@ -23,14 +26,14 @@ public class Manager : MonoBehaviour
     private bool evaluationStarted = false;
     private float evaluationTimer;
 
-    void Start()
+    private void Start()
     {
         //Don't destroy
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(player);
     }
 
-    void Update()
+    private void Update()
     {
         if (!string.IsNullOrEmpty(userCode) && Input.GetKeyDown(KeyCode.Space))
         {
@@ -87,4 +90,3 @@ public class Manager : MonoBehaviour
         evaluationStarted = false;
     }
 }
-
